@@ -1,0 +1,12 @@
+{
+  "name": "bluespice/nsfilerepoconnector",
+  "type": "mediawiki-extension",
+  "description": "Integrates NSFileRepo in a range of BlueSpice Extenions (Requires NSFileRepo)",
+  "license": "GPL-3.0-only",
+  "require": {
+    "composer/installers": "~1.0"
+  },
+  "extra": {
+    "installer-name": "BlueSpiceNSFileRepoConnector"
+  }
+}
