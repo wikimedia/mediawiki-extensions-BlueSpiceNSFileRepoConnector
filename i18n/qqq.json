@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"bs-nsfrc-targetnamespace-label": "Label text to be shown in the upload dialog",
+	"bs-nsfrc-unprefixedfilename-label": "Label text to be shown in the upload dialog for file name input",
+	"apihelp-bs-nsfrc-tasks-description": "Description of the API endpoint for extension BlueSpiceNSFileRepoConnector",
+	"apihelp-bs-nsfilerepo-connector-description": "Description of the API endpoint for extension BlueSpiceNSFileRepoConnector",
+	"bs-nsfrc-uploaddialog-selector-label": "Label for the namespace selector in VisualEditor upload dialog"
+}
