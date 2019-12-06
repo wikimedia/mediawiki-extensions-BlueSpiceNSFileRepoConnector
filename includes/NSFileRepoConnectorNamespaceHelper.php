@@ -4,7 +4,7 @@ class NSFileRepoConnectorNamespaceHelper {
 	/**
 	 * Returns an Array of Namespaces, that can be used for NSFileRepo
 	 * @param Boolean $bFilterByPermissions
-	 * @param User $oUser
+	 * @param User|null $oUser
 	 * @return Array (NsIdx => NsLocalizedName)
 	 */
 	public static function getPossibleNamespaces( $bFilterByPermissions = true, $oUser = null ) {
@@ -15,9 +15,9 @@ class NSFileRepoConnectorNamespaceHelper {
 		);
 
 		$aNamespaces = [];
-		foreach( $oNamespaceList->getReadable() as $iNsId => $oNamespace ) {
+		foreach ( $oNamespaceList->getReadable() as $iNsId => $oNamespace ) {
 			$sName = $oNamespace->getCanonicalName();
-			if( $iNsId === NS_MAIN ) {
+			if ( $iNsId === NS_MAIN ) {
 				$sName = wfMessage( 'nsfilerepo-nsmain' )->inContentLanguage()->plain();
 			}
 			$aNamespaces[$iNsId] = $sName;

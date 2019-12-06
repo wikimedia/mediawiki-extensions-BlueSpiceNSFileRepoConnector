@@ -2,4 +2,5 @@
 
 namespace BlueSpice\NSFileRepoConnector;
 
-class Extension extends \BlueSpice\Extension {}
+class Extension extends \BlueSpice\Extension {
+}
