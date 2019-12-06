@@ -25,6 +25,8 @@
  * @filesource
  */
 
+use BlueSpice\Api\Response\Standard;
+
 /**
  * Api class for NSFileRepoConnector
  * @package BluespiceWebDAV
@@ -35,16 +37,24 @@ class BSApiNSFileRepoConnector extends BSApiTasksBase {
 	 * Methods that can be called by task param
 	 * @var array
 	 */
-	protected $aTasks = array(
+	protected $aTasks = [
 		'getPossibleNamespaces'
-	);
+	];
 
+	/**
+	 *
+	 * @var array
+	 */
 	protected $aReadTasks = [ 'getPossibleNamespaces' ];
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getRequiredTaskPermissions() {
-		return array(
-			'getPossibleNamespaces' => array( 'read' )
-		);
+		return [
+			'getPossibleNamespaces' => [ 'read' ]
+		];
 	}
 
 	/**
@@ -52,11 +62,17 @@ class BSApiNSFileRepoConnector extends BSApiTasksBase {
 	 * @return type
 	 */
 	public function getDescription() {
-		return array(
+		return [
 			'BSApiNSFileRepoConnector: API for various ajax calls related to the NSFileRepoConnector'
-		);
+		];
 	}
 
+	/**
+	 *
+	 * @param \stdClass $sTaskData
+	 * @param array $aParams
+	 * @return Standard
+	 */
 	public function task_getPossibleNamespaces( $sTaskData, $aParams ) {
 		$oReturn = static::makeStandardReturn();
 		$oReturn->success = true;
@@ -66,6 +82,10 @@ class BSApiNSFileRepoConnector extends BSApiTasksBase {
 		return $oReturn;
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	public function isWriteMode() {
 		return false;
 	}

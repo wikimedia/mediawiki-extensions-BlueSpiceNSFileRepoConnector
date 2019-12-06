@@ -41,10 +41,10 @@ class NSFRCBSExtendedSearchSearchOptionsAssembleSearchOptions {
 	/**
 	 *
 	 * @param SearchOptions $oSearchOptions
-	 * @param array $aOptions
-	 * @param array $aFq
-	 * @param array $aFacetFields
-	 * @return boolean
+	 * @param array &$aOptions
+	 * @param array &$aFq
+	 * @param array &$aFacetFields
+	 * @return bool
 	 */
 	public static function handle( $oSearchOptions, &$aOptions, &$aFq, &$aFacetFields ) {
 		$instance = new self(
@@ -59,17 +59,17 @@ class NSFRCBSExtendedSearchSearchOptionsAssembleSearchOptions {
 		return $instance->process();
 	}
 
-
 	/**
 	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param SearchOptions $oSearchOptions
-	 * @param array $aOptions
-	 * @param array $aFq
-	 * @param array $aFacetFields
+	 * @param array &$aOptions
+	 * @param array &$aFq
+	 * @param array &$aFacetFields
 	 */
-	public function __construct( $context, $config, $oSearchOptions, &$aOptions, &$aFq, &$aFacetFields ) {
+	public function __construct( $context, $config, $oSearchOptions, &$aOptions, &$aFq,
+		&$aFacetFields ) {
 		$this->context = $context;
 		$this->config = $config;
 		$this->oSearchOptions = $oSearchOptions;
@@ -80,7 +80,7 @@ class NSFRCBSExtendedSearchSearchOptionsAssembleSearchOptions {
 
 	/**
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function process() {
 		$this->fetchNotReadableNamespacePrefixes();
@@ -99,20 +99,20 @@ class NSFRCBSExtendedSearchSearchOptionsAssembleSearchOptions {
 		$aNamespaceIds = array_values(
 			$this->context->getLanguage()->getNamespaceIds()
 		);
-		
-		foreach( $aNamespaceIds as $iNsId ) {
-			//File uploads to talk namespaces are not possible
-			if( MWNamespace::isTalk( $iNsId ) ) {
+
+		foreach ( $aNamespaceIds as $iNsId ) {
+			// File uploads to talk namespaces are not possible
+			if ( MWNamespace::isTalk( $iNsId ) ) {
 				continue;
 			}
 
-			//We don't need namespaces below the threshold into account
-			if( $this->config->get( NSFileRepo\Config::CONFIG_THRESHOLD ) > $iNsId ) {
+			// We don't need namespaces below the threshold into account
+			if ( $this->config->get( NSFileRepo\Config::CONFIG_THRESHOLD ) > $iNsId ) {
 				continue;
 			}
 
-			//If the user can read the namespace we don't need to blacklist it
-			if( Title::makeTitle( $iNsId, 'X')->userCan( 'read' ) ) {
+			// If the user can read the namespace we don't need to blacklist it
+			if ( Title::makeTitle( $iNsId, 'X' )->userCan( 'read' ) ) {
 				continue;
 			}
 
@@ -131,22 +131,23 @@ class NSFRCBSExtendedSearchSearchOptionsAssembleSearchOptions {
 	 * As this is very unlikely we do not handle such cases here.
 	 */
 	protected function assembleFilterQuery() {
-		if( empty( $this->aPrefixes ) ) {
-			return; //Bail out to avoid invalid filter query
+		if ( empty( $this->aPrefixes ) ) {
+			// Bail out to avoid invalid filter query
+			return;
 		}
 
-		$aDecoratedPrefixes = array_map( function( $element ) {
+		$aDecoratedPrefixes = array_map( function ( $element ) {
 			return "$element\:*";
 		},  $this->aPrefixes );
 
 		$sOrSeperatedList = implode( ' OR ', $aDecoratedPrefixes );
 
-		//-title:(E* OR W* OR K*)
+		// -title:(E* OR W* OR K*)
 		$this->sFilterQuery = "-title:($sOrSeperatedList)";
 	}
 
 	protected function addFilterQuery() {
-		if( !empty( $this->sFilterQuery ) ) {
+		if ( !empty( $this->sFilterQuery ) ) {
 			$this->aFq[] = $this->sFilterQuery;
 		}
 	}
