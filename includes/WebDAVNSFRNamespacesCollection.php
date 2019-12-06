@@ -1,7 +1,12 @@
 <?php
+
 class WebDAVNSFRNamespacesCollection extends WebDAVPagesCollection {
+	/**
+	 *
+	 * @return array
+	 */
 	public function getChildren() {
-		$children = array();
+		$children = [];
 		$aNamespaces = NSFileRepoConnectorNamespaceHelper::getPossibleNamespaces();
 
 		foreach ( $aNamespaces as $iNsId => $sNsName ) {

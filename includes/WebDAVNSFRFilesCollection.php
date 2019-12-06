@@ -2,8 +2,6 @@
 class WebDAVNSFRFilesCollection extends WebDAVFilesCollection {
 	/**
 	 *
-	 * @global string $bsgWebDAVInvalidFileNameCharsRegEx
-	 * @global Language $wgContLang
 	 * @return array of Nodes
 	 */
 	public function getChildren() {
@@ -11,20 +9,20 @@ class WebDAVNSFRFilesCollection extends WebDAVFilesCollection {
 		$sPrefix = $this->getPrefix();
 
 		$dbr = wfGetDB( DB_REPLICA );
-		$pattern = array(
+		$pattern = [
 			$sPrefix, $dbr->anyString()
-		);
+		];
 		$res = $dbr->select(
 			'image',
 			'*',
-			'img_name '.$dbr->buildLike( $pattern )
+			'img_name ' . $dbr->buildLike( $pattern )
 		);
 
-		$children = array();
-		foreach( $res as $row ) {
+		$children = [];
+		foreach ( $res as $row ) {
 			$sTrimmedTitle = substr( $row->img_name, strlen( $sPrefix ) );
 
-			if( preg_match( $config->get( 'WebDAVInvalidFileNameCharsRegEx') , $sTrimmedTitle ) !== 0 ) {
+			if ( preg_match( $config->get( 'WebDAVInvalidFileNameCharsRegEx' ), $sTrimmedTitle ) !== 0 ) {
 				continue;
 			}
 
@@ -40,23 +38,32 @@ class WebDAVNSFRFilesCollection extends WebDAVFilesCollection {
 	 * @param string $name
 	 * @return Node
 	 */
-	public function getChild($name) {
+	public function getChild( $name ) {
 		$sPrefix = $this->getPrefix();
-		$sPrefixedName = $sPrefix.$name;
+		$sPrefixedName = $sPrefix . $name;
 
 		$oWebDAVFileFile = parent::getChild( $sPrefixedName );
 		return new WebDAVNSFRFileFile( $oWebDAVFileFile->getFileObj() );
 	}
 
-	public function createFile($name, $data = null) {
+	/**
+	 *
+	 * @param string $name
+	 * @param resource|null $data
+	 */
+	public function createFile( $name, $data = null ) {
 		$sPrefix = $this->getPrefix();
-		$sPrefixedName = $sPrefix.$name;
-		parent::createFile($sPrefixedName, $data);
+		$sPrefixedName = $sPrefix . $name;
+		parent::createFile( $sPrefixedName, $data );
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getPrefix() {
-		$sPrefix = $this->sName.':';
-		if( $this->iNSId === NS_MAIN ) {
+		$sPrefix = $this->sName . ':';
+		if ( $this->iNSId === NS_MAIN ) {
 			$sPrefix = '';
 		}
 		return str_replace( ' ', '_',  $sPrefix );
