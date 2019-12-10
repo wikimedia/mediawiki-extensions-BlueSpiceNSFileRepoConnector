@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fitoschido"
+			"Fitoschido",
+			"Ihojose"
 		]
 	},
-	"bs-nsfrc-unprefixedfilename-label": "Título"
+	"bs-nsfrc-namespacestore-label": "Espacio de nombre",
+	"bs-nsfrc-namespacecombo-emptytext": "Seleccionar espacio de nombre",
+	"bs-nsfrc-unprefixedfilename-label": "Título",
+	"bs-nsfrc-uploaddialog-selector-label": "Espacio de nombre destino"
 }
