@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eduardo Addad de Oliveira"
+		]
+	},
+	"bs-nsfrc-namespacestore-label": "Espaço nominal",
+	"bs-nsfrc-namespacecombo-emptytext": "Selecionar espaço nominal",
+	"bs-nsfrc-unprefixedfilename-label": "Título",
+	"bs-nsfrc-uploaddialog-selector-label": "Espaço nominal de destino"
+}
