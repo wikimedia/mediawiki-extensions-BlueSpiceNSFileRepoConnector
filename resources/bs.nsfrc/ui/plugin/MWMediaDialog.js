@@ -27,7 +27,7 @@
 			exclude: this.invalidNamespaces
 		} );
 		this.namespaceSelectorLayout = new OO.ui.FieldLayout( this.namespaceSelector, {
-			label: mw.msg( "bs-nsfrc-uploaddialog-selector-label" ).text(),
+			label: mw.msg( "bs-nsfrc-uploaddialog-selector-label" ),
 			align: 'top'
 		} );
 
