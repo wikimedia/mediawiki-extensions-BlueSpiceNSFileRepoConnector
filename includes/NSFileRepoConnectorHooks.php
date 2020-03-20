@@ -68,7 +68,10 @@ class NSFileRepoConnectorHooks {
 
 			if ( !in_array( $oTitle->getNamespace(), self::$aCheckedNs ) ) {
 				self::$aCheckedNs[] = $oTitle->getNamespace();
-				if ( !$oTitle->userCan( 'read' ) ) {
+				if ( !\MediaWiki\MediaWikiServices::getInstance()
+					->getPermissionManager()
+					->userCan( 'read', $oInstance->getUser(), $oTitle )
+				) {
 					self::$aNoReadNs[] = $oTitle->getNamespace();
 				}
 			}

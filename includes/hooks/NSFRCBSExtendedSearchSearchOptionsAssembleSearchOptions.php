@@ -112,7 +112,14 @@ class NSFRCBSExtendedSearchSearchOptionsAssembleSearchOptions {
 			}
 
 			// If the user can read the namespace we don't need to blacklist it
-			if ( Title::makeTitle( $iNsId, 'X' )->userCan( 'read' ) ) {
+			if ( \MediaWiki\MediaWikiServices::getInstance()
+				->getPermissionManager()
+				->userCan(
+					'read',
+					$this->context->getUser(),
+					Title::makeTitle( $iNsId, 'X' )
+				)
+			) {
 				continue;
 			}
 
