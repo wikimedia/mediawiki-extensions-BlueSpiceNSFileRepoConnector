@@ -64,7 +64,7 @@
 			"scripts": [
 				"ext.bluespice.NSFRC.insertFile.js"
 			],
-		 	"dependencies": [
+			"dependencies": [
 				"ext.bluespice.NSFRC"
 			],
 			"messages": [
@@ -85,9 +85,9 @@
 			"scripts": [
 				"ext.bluespice.NSFRC.multiUpload.js"
 			],
-		 	"dependencies": [
+			"dependencies": [
 				"ext.bluespice.NSFRC"
-		 	],
+			],
 			"messages": [
 				"bs-ns_all",
 				"bs-nsfrc-namespacestore-label",
@@ -99,9 +99,9 @@
 			"scripts": [
 				"ext.bluespice.NSFRC.fileRepoGrid.js"
 			],
-		 	"dependencies": [
+			"dependencies": [
 				"ext.bluespice.NSFRC"
-		 	],
+			],
 			"messages": [
 				"bs-ns_all",
 				"bs-nsfrc-namespacestore-label",
@@ -122,9 +122,9 @@
 				"bs.nsfrc/ui/plugin/MWMediaDialog.js",
 				"ext.bluespice.NSFRC.uploadDialogIntegration.js"
 			],
-		 	"dependencies": [
+			"dependencies": [
 				"ext.bluespice.NSFRC"
-		 	],
+			],
 			"messages": [
 				"bs-nsfrc-uploaddialog-selector-label"
 			]
