@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 class WebDAVNSFRFilesCollection extends WebDAVFilesCollection {
 	/**
 	 *
@@ -18,6 +21,7 @@ class WebDAVNSFRFilesCollection extends WebDAVFilesCollection {
 			'img_name ' . $dbr->buildLike( $pattern )
 		);
 
+		$localRepo = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo();
 		$children = [];
 		foreach ( $res as $row ) {
 			$sTrimmedTitle = substr( $row->img_name, strlen( $sPrefix ) );
@@ -26,7 +30,7 @@ class WebDAVNSFRFilesCollection extends WebDAVFilesCollection {
 				continue;
 			}
 
-			$oFile = RepoGroup::singleton()->getLocalRepo()->newFileFromRow( $row );
+			$oFile = $localRepo->newFileFromRow( $row );
 			$children[] = new WebDAVNSFRFileFile( $oFile );
 		}
 
