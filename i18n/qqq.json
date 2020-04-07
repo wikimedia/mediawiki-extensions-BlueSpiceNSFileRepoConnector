@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robert Vogel",
 			"Markus Glaser",
-			"Patric Wirth"
+			"Patric Wirth",
+			"Robert Vogel"
 		]
 	},
 	"bs-nsfrc-desc": "{{desc|name=BlueSpiceNSFileRepoConnector}}",
