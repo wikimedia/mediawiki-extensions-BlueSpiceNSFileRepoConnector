@@ -3,7 +3,7 @@ class NSFileRepoConnectorNamespaceHelper {
 
 	/**
 	 * Returns an Array of Namespaces, that can be used for NSFileRepo
-	 * @param Boolean $bFilterByPermissions
+	 * @param bool $bFilterByPermissions
 	 * @param User|null $oUser
 	 * @return Array (NsIdx => NsLocalizedName)
 	 */
