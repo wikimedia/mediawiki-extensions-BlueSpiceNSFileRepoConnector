@@ -140,29 +140,6 @@ class NSFileRepoConnectorHooks {
 	}
 
 	/**
-	 * Gets filename from URL
-	 * @param string &$sFilename
-	 * @param string $sUrl
-	 * @return bool Always true to keep hook running
-	 */
-	public static function onWebDAVTokenizerGetFilenameFromUrl( &$sFilename, $sUrl ) {
-		$aUrlBits = explode( '/', $sUrl );
-		$sFile = array_pop( $aUrlBits );
-		$sNamespace = array_pop( $aUrlBits );
-
-		if ( $sNamespace === wfMessage( 'bs-ns_main' )->plain() ) {
-			$sTitle = $sFile;
-		} else {
-			$sTitle = $sNamespace . ':' . $sFile;
-		}
-		$oTitle = Title::makeTitle( NS_FILE, $sTitle );
-		if ( $oTitle->exists() ) {
-			$sFilename = $oTitle->getText();
-		}
-		return true;
-	}
-
-	/**
 	 * Replaces colon with underscore for Win
 	 * compatibility on prefixed files
 	 * @param object $oSender
@@ -229,20 +206,17 @@ class NSFileRepoConnectorHooks {
 	 * @return bool
 	 */
 	public static function onWebDAVGetFilenameFromUrl( &$filename, $url ) {
-		// At this point, we know file has multiple namespaces
-		$bits = explode( '/', $url );
-		$file = array_pop( $bits );
-		$subNS = array_pop( $bits );
-		$ns = array_pop( $bits );
+		$urlBits = explode( '/', $url );
+		$file = array_pop( $urlBits );
+		$namespace = array_pop( $urlBits );
 
-		$title = Title::newFromText( "$ns:$subNS:$file" );
-		if ( $title instanceof Title && $title->getNamespace() === NS_MEDIA ) {
-			$title = Title::makeTitle( NS_FILE, $title->getText() );
-			if ( $title->exists() ) {
-				$filename = $title->getText();
-				return false;
-			}
+		if ( $namespace === wfMessage( 'bs-ns_main' )->plain() ) {
+			$title = $file;
+		} else {
+			$title = $namespace . ':' . $file;
 		}
+		$title = Title::makeTitle( NS_FILE, $title );
+		$filename = $title->getText();
 
 		return true;
 	}
