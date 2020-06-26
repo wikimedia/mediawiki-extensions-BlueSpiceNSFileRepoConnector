@@ -140,7 +140,6 @@
 		"BSApiExtJSStoreBaseBeforePostProcessData": "NSFileRepoConnectorHooks::onBSApiExtJSStoreBaseBeforePostProcessData",
 		"BSApiExtJSStoreBaseAfterFilterData": "NSFileRepoConnectorHooks::onBSApiExtJSStoreBaseAfterFilterData",
 		"WebDAVUrlProviderGetUrl": "NSFileRepoConnectorHooks::onWebDAVUrlProviderGetUrl",
-		"WebDAVTokenizerGetFilenameFromUrl": "NSFileRepoConnectorHooks::onWebDAVTokenizerGetFilenameFromUrl",
 		"MakeGlobalVariablesScript": "NSFileRepoConnectorHooks::onMakeGlobalVariablesScript",
 		"BSUEModulePDFFindFiles": "NSFileRepoConnectorHooks::onBSUEModulePDFFindFiles",
 		"BSImportFilesMakeTitle": "NSFileRepoConnectorHooks::onBSImportFilesMakeTitle",
