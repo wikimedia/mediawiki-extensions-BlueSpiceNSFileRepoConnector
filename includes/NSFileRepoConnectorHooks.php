@@ -133,7 +133,7 @@ class NSFileRepoConnectorHooks {
 			// NS_MAIN --> prepend '(Pages)'
 			array_unshift(
 				$aFileParts,
-				wfMessage( 'bs-ns_main' )->plain()
+				wfMessage( 'nsfilerepo-nsmain' )->plain()
 			);
 		}
 
@@ -213,13 +213,11 @@ class NSFileRepoConnectorHooks {
 		$file = array_pop( $urlBits );
 		$namespace = array_pop( $urlBits );
 
-		if ( $namespace === wfMessage( 'bs-ns_main' )->plain() ) {
-			$title = $file;
+		if ( $namespace === wfMessage( 'nsfilerepo-nsmain' )->plain() ) {
+			$filename = $file;
 		} else {
-			$title = $namespace . ':' . $file;
+			$filename = $namespace . ':' . $file;
 		}
-		$title = Title::makeTitle( NS_FILE, $title );
-		$filename = $title->getText();
 
 		return true;
 	}
