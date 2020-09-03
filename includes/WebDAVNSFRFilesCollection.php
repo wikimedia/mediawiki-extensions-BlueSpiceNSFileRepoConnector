@@ -8,7 +8,7 @@ class WebDAVNSFRFilesCollection extends WebDAVFilesCollection {
 	 * @return array of Nodes
 	 */
 	public function getChildren() {
-		$config = \BlueSpice\Services::getInstance()->getConfigFactory()->makeConfig( 'webdav' );
+		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'webdav' );
 		$sPrefix = $this->getPrefix();
 
 		$dbr = wfGetDB( DB_REPLICA );
