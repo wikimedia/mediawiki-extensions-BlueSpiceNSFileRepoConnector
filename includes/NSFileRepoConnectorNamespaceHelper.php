@@ -5,7 +5,7 @@ class NSFileRepoConnectorNamespaceHelper {
 	 * Returns an Array of Namespaces, that can be used for NSFileRepo
 	 * @param bool $bFilterByPermissions
 	 * @param User|null $oUser
-	 * @return Array (NsIdx => NsLocalizedName)
+	 * @return array (NsIdx => NsLocalizedName)
 	 */
 	public static function getPossibleNamespaces( $bFilterByPermissions = true, $oUser = null ) {
 		$oNamespaceList = new NSFileRepo\NamespaceList(
