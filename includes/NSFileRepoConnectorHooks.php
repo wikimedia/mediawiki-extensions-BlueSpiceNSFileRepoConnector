@@ -128,7 +128,7 @@ class NSFileRepoConnectorHooks {
 	 * @return bool Always true to keep hook running
 	 */
 	public static function onWebDAVUrlProviderGetUrl( &$sPath, &$sFilename, $oTitle ) {
-		$aFileParts = explode( ':', $oTitle->getText(), 2 );
+		$aFileParts = explode( ':', $oTitle->getDBKey(), 2 );
 		if ( count( $aFileParts ) === 1 ) {
 			// NS_MAIN --> prepend '(Pages)'
 			array_unshift(
