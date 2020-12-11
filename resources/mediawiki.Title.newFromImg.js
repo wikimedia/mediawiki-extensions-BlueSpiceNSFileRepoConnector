@@ -3,24 +3,39 @@
 
 	mw.Title.newFromImg = function ( img ) {
 		var title = oldTitleNewFromImg( img );
+		var newTitle = null;
+		var dummyNSFRTitle = null;
 		var src = img.jquery ? img[0].src : img.src;
 		src = decodeURI( src );
-		var matches = src.match( /\/([0-9]*?)\/[a-f0-9]\/[a-f0-9]{2}\/([^\s]+)$/ );
-		if( !matches ) {
-			return title;
-		}
-		var nsId = parseInt( matches[1] );
-		if( nsId ) {
-			var realTitle = mw.Title.newFromText( title.getMainText(), nsId );
-			//We use matches[2] as realTitle.getText() returns an first case upper string.
-			//This is quite ugly, but there are cases in which the first char is not upper case
-			var fileNameParts = matches[2].split('/');
-			var fileName = fileNameParts[0];
-			return mw.Title.newFromText(
-				'File:' + realTitle.getNamespacePrefix() + fileName
-			);
+
+		matches = src.match( /\/([^\s]*\/{1})([^\s]*\/{1})([0-9]+?)\/[a-f0-9]\/[a-f0-9]{2}\/([^\s]+)$/ );
+		if ( matches !== null && matches[2] === 'archive/' ) {
+			// If file is e.g. "20210121121500!Some_file.png", we need to remove the timestamp
+			var fileNameParts = matches[4].match( /([0-9]{14})!([^\s]+)$/ );
+			if ( fileNameParts !== null ) {
+				dummyNSFRTitle = mw.Title.newFromText( 'dummy', matches[3] );
+				newTitle = mw.Title.newFromText(
+					'File:' + dummyNSFRTitle.getNamespacePrefix() + fileNameParts[2]
+				);
+
+				// Hint: The timestamp prefix of the filename is the upload date of the newer file.
+				// To get the old image we have to reduce the timestamp and set the iistart for the imageinfo api.
+				newTitle.timestamp = fileNameParts[1];
+
+				return newTitle;
+			}
+		} else {
+			matches = src.match( /\/([^\s]*\/{1})([0-9]+?)\/[a-f0-9]\/[a-f0-9]{2}\/([^\s]+)/ );
+			if ( matches !== null) {
+				dummyNSFRTitle = mw.Title.newFromText( 'dummy', matches[2] );
+				newTitle = mw.Title.newFromText(
+					'File:' + dummyNSFRTitle.getNamespacePrefix() + matches[3]
+				);
+
+				return newTitle;
+			}
 		}
 
 		return title;
-	};
+	}
 })( mediaWiki, jQuery );
