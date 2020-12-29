@@ -145,7 +145,7 @@ class NSFileRepoConnectorHooks {
 	/**
 	 * Replaces colon with underscore for Win
 	 * compatibility on prefixed files
-	 * @param object $oSender
+	 * @param BsPDFServlet $oSender Unused
 	 * @param DOMElement $oImageElement
 	 * @param string &$sAbsoluteFileSystemPath
 	 * @param string &$sFileName
