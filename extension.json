@@ -41,7 +41,7 @@
 		]
 	},
 	"AutoloadNamespaces": {
-		"BlueSpice\\NSFileRepoConnector\\" : "src/"
+		"BlueSpice\\NSFileRepoConnector\\": "src/"
 	},
 	"AutoloadClasses": {
 		"WebDAVNSFRFilesCollection": "includes/WebDAVNSFRFilesCollection.php",
