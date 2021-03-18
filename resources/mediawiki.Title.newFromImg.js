@@ -9,9 +9,16 @@
 		src = decodeURI( src );
 
 		matches = src.match( /\/([^\s]*\/{1})([^\s]*\/{1})([0-9]+?)\/[a-f0-9]\/[a-f0-9]{2}\/([^\s]+)$/ );
+		// If file is e.g. "20210121121500!Some_file.png/100px-Some_file.png", we need to remove the timestamp
 		if ( matches !== null && matches[2] === 'archive/' ) {
-			// If file is e.g. "20210121121500!Some_file.png", we need to remove the timestamp
-			var fileNameParts = matches[4].match( /([0-9]{14})!([^\s]+)$/ );
+			// Is it an archived thumbnail?
+			var fileNameParts = matches[4].match( /([0-9]{14})!([^\s]+)\/([^\s]+)$/ );
+
+			if ( fileNameParts === null ) {
+				// Is it an archived image?
+				fileNameParts = matches[4].match( /([0-9]{14})!([^\s]+)$/ );
+			}
+
 			if ( fileNameParts !== null ) {
 				dummyNSFRTitle = mw.Title.newFromText( 'dummy', matches[3] );
 				newTitle = mw.Title.newFromText(
@@ -19,13 +26,19 @@
 				);
 
 				// Hint: The timestamp prefix of the filename is the upload date of the newer file.
-				// To get the old image we have to reduce the timestamp and set the iistart for the imageinfo api.
 				newTitle.timestamp = fileNameParts[1];
 
 				return newTitle;
 			}
 		} else {
-			matches = src.match( /\/([^\s]*\/{1})([0-9]+?)\/[a-f0-9]\/[a-f0-9]{2}\/([^\s]+)/ );
+			// Is it an archived thumb?
+			matches = src.match( /\/([^\s]*\/{1})([0-9]+?)\/[a-f0-9]\/[a-f0-9]{2}\/([^\s]+)\/([^\s]+)/ );
+
+			if ( matches === null) {
+				// Is it an archived image?
+				matches = src.match( /\/([^\s]*\/{1})([0-9]+?)\/[a-f0-9]\/[a-f0-9]{2}\/([^\s]+)/ );
+			}
+
 			if ( matches !== null) {
 				dummyNSFRTitle = mw.Title.newFromText( 'dummy', matches[2] );
 				newTitle = mw.Title.newFromText(
