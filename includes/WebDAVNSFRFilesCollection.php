@@ -15,10 +15,15 @@ class WebDAVNSFRFilesCollection extends WebDAVFilesCollection {
 		$pattern = [
 			$sPrefix, $dbr->anyString()
 		];
+
+		$fileQuery = NSLocalFile::getQueryInfo();
 		$res = $dbr->select(
-			'image',
-			'*',
-			'img_name ' . $dbr->buildLike( $pattern )
+			$fileQuery['tables'],
+			$fileQuery['fields'],
+			'img_name ' . $dbr->buildLike( $pattern ),
+			__METHOD__,
+			[],
+			$fileQuery['joins']
 		);
 
 		$localRepo = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo();
