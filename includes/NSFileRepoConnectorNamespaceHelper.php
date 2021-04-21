@@ -16,7 +16,7 @@ class NSFileRepoConnectorNamespaceHelper {
 
 		$aNamespaces = [];
 		foreach ( $oNamespaceList->getReadable() as $iNsId => $oNamespace ) {
-			$sName = $oNamespace->getCanonicalName();
+			$sName = RequestContext::getMain()->getLanguage()->getNsText( $iNsId );
 			if ( $iNsId === NS_MAIN ) {
 				$sName = wfMessage( 'nsfilerepo-nsmain' )->inContentLanguage()->plain();
 			}
