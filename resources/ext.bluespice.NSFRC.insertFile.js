@@ -105,9 +105,6 @@ $(document).bind('BSUploadPanelInitComponent', function( event, sender, panelIte
 		if( pos !== -1 ) {
 			value = value.substring( 0, pos );
 		}
-		if( mw.config.get('bsIsWindows') ) {
-			value = value.replace(/[^\u0000-\u007F]/gmi, ''); //Replace Non-ASCII
-		}
 
 		fakeTf.setValue(value);
 		fakeTf.fireEvent('change', fakeTf, value);

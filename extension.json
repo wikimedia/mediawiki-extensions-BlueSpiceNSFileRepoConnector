@@ -144,7 +144,8 @@
 		"BSImportFilesMakeTitle": "NSFileRepoConnectorHooks::onBSImportFilesMakeTitle",
 		"BSExportFilesBeforeSave": "NSFileRepoConnectorHooks::onBSExportFilesBeforeSave",
 		"BSExtendedSearchSearchOptionsAssembleSearchOptions": "NSFRCBSExtendedSearchSearchOptionsAssembleSearchOptions::handle",
-		"WebDAVGetFilenameFromUrl": "NSFileRepoConnectorHooks::onWebDAVGetFilenameFromUrl"
+		"WebDAVGetFilenameFromUrl": "NSFileRepoConnectorHooks::onWebDAVGetFilenameFromUrl",
+		"ImgAuthBeforeCheckFileExists": "\\BlueSpice\\NSFileRepoConnector\\Hook\\ImgAuthBeforeCheckFileExists\\FixFileNameEncodingForIIS::callback"
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 2
