@@ -143,7 +143,7 @@ class NSFRCBSExtendedSearchSearchOptionsAssembleSearchOptions {
 			return;
 		}
 
-		$aDecoratedPrefixes = array_map( function ( $element ) {
+		$aDecoratedPrefixes = array_map( static function ( $element ) {
 			return "$element\:*";
 		},  $this->aPrefixes );
 

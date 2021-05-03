@@ -105,7 +105,7 @@ class NSFileRepoConnectorHooks {
 		}
 		$aNoReadNs = self::$aNoReadNs;
 
-		$aProcessedData = array_filter( $aProcessedData, function ( $oE ) use( $aValue, $aNoReadNs ) {
+		$aProcessedData = array_filter( $aProcessedData, static function ( $oE ) use( $aValue, $aNoReadNs ) {
 			// Filter all namespaces without read permission
 			// TODO: Probably add a warning to the result set
 			// (permission-denied: for <ns>:)
