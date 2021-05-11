@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajeje Brazorf",
 			"Beta16"
 		]
 	},
-	"bs-nsfrc-unprefixedfilename-label": "Titolo"
+	"bs-nsfrc-unprefixedfilename-label": "Titolo",
+	"bs-nsfrc-namespacestore-label": "Namespace"
 }
