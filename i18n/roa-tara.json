@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"bs-nsfrc-desc": "Indegre NSFileRepo jndr'à 'nu 'ndervalle de le estenziune BlueSpice (Vole NSFileRepo)",
+	"bs-nsfrc-namespacestore-label": "Namespace",
+	"bs-nsfrc-namespacecombo-emptytext": "Scacchie 'u namespace",
+	"bs-nsfrc-unprefixedfilename-label": "Titole",
+	"bs-nsfrc-uploaddialog-selector-label": "Namespace d'a destinazione",
+	"apihelp-bs-nsfrc-tasks-summary": "Endpoint de l'API pe l'estenzione BlueSpiceNSFileRepoConnector",
+	"apihelp-bs-nsfilerepo-connector-summary": "Endpoint de l'API pe l'estenzione BlueSpiceNSFileRepoConnector"
+}
