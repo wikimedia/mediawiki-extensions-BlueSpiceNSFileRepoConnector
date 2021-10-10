@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class NSFRCBSExtendedSearchSearchOptionsAssembleSearchOptions {
 
 	/**
@@ -100,9 +102,12 @@ class NSFRCBSExtendedSearchSearchOptionsAssembleSearchOptions {
 			$this->context->getLanguage()->getNamespaceIds()
 		);
 
+		$services = MediaWikiServices::getInstance();
+		$namespaceInfo = $services->getNamespaceInfo();
+		$permissionManager = $services->getPermissionManager();
 		foreach ( $aNamespaceIds as $iNsId ) {
 			// File uploads to talk namespaces are not possible
-			if ( MWNamespace::isTalk( $iNsId ) ) {
+			if ( $namespaceInfo->isTalk( $iNsId ) ) {
 				continue;
 			}
 
@@ -112,8 +117,7 @@ class NSFRCBSExtendedSearchSearchOptionsAssembleSearchOptions {
 			}
 
 			// If the user can read the namespace we don't need to blacklist it
-			if ( \MediaWiki\MediaWikiServices::getInstance()
-				->getPermissionManager()
+			if ( $permissionManager
 				->userCan(
 					'read',
 					$this->context->getUser(),
@@ -123,7 +127,7 @@ class NSFRCBSExtendedSearchSearchOptionsAssembleSearchOptions {
 				continue;
 			}
 
-			$this->aPrefixes[] = MWNamespace::getCanonicalName( $iNsId );
+			$this->aPrefixes[] = $namespaceInfo->getCanonicalName( $iNsId );
 		}
 	}
 
