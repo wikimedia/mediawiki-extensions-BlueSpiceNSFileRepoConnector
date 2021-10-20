@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"DDPAT",
 			"Kareyac"
 		]
 	},
-	"bs-nsfrc-namespacestore-label": "Пространство имён"
+	"bs-nsfrc-namespacestore-label": "Пространство имён",
+	"bs-nsfrc-unprefixedfilename-label": "Заголовок",
+	"bs-nsfrc-uploaddialog-selector-label": "Цель пространства имён"
 }

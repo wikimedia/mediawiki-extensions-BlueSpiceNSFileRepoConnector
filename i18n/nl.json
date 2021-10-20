@@ -1,11 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mainframe98"
+			"Mainframe98",
+			"McDutchie"
 		]
 	},
 	"bs-nsfrc-namespacestore-label": "Naamruimte",
 	"bs-nsfrc-namespacecombo-emptytext": "Naamruimte selecteren",
 	"bs-nsfrc-unprefixedfilename-label": "Titel",
-	"bs-nsfrc-uploaddialog-selector-label": "Doelnaamruimte"
+	"bs-nsfrc-uploaddialog-selector-label": "Doelnaamruimte",
+	"bs-nsfrc-desc": "Integreert NSFileRepo in een reeks BlueSpice-uitbreidingen (vereist NSFileRepo)",
+	"apihelp-bs-nsfrc-tasks-summary": "API-eindpunt voor uitbreiding BlueSpiceNSFileRepoConnector",
+	"apihelp-bs-nsfilerepo-connector-summary": "API-eindpunt voor uitbreiding BlueSpiceNSFileRepoConnector"
 }
