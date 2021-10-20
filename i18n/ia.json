@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"bs-nsfrc-desc": "Integra NSFileRepo in un gamma de extensiones BlueSpice (require NSFileRepo)",
+	"bs-nsfrc-namespacestore-label": "Spatio de nomines",
+	"bs-nsfrc-namespacecombo-emptytext": "Selige spatio de nomines",
+	"bs-nsfrc-unprefixedfilename-label": "Titulo",
+	"bs-nsfrc-uploaddialog-selector-label": "Spatio de nomines de destination",
+	"apihelp-bs-nsfrc-tasks-summary": "Puncto de termination del API pro le extension BlueSpiceNSFileRepoConnector",
+	"apihelp-bs-nsfilerepo-connector-summary": "Puncto de termination del API pro le extension BlueSpiceNSFileRepoConnector"
+}
