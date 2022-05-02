@@ -151,10 +151,10 @@ class NSFRCBSExtendedSearchSearchOptionsAssembleSearchOptions {
 			return "$element\:*";
 		},  $this->aPrefixes );
 
-		$sOrSeperatedList = implode( ' OR ', $aDecoratedPrefixes );
+		$sOrSeparatedList = implode( ' OR ', $aDecoratedPrefixes );
 
 		// -title:(E* OR W* OR K*)
-		$this->sFilterQuery = "-title:($sOrSeperatedList)";
+		$this->sFilterQuery = "-title:($sOrSeparatedList)";
 	}
 
 	protected function addFilterQuery() {
