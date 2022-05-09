@@ -9,7 +9,8 @@ $(document).on( 'BSMultiUploadDialogMakeItems', function(e, sender, items) {
 		fieldLabel: mw.message( 'bs-nsfrc-namespacestore-label' ).plain()
 	});
 
-	defaultNamespaceId = mw.config.get( 'wgNamespaceNumber' );
+	defaultNamespaceId = sender.targetPage instanceof mw.Title ?
+		sender.targetPage.getNamespaceId() : mw.config.get( 'wgNamespaceNumber' );
 	if( exNamespaces.indexOf( defaultIndex ) !== -1 ) {
 		defaultNamespaceId = 0;
 	}
