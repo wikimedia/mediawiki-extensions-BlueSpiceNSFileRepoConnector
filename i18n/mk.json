@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"bs-nsfrc-namespacestore-label": "Именски простор",
+	"bs-nsfrc-namespacecombo-emptytext": "Изберете именски простор",
+	"bs-nsfrc-unprefixedfilename-label": "Наслов",
+	"bs-nsfrc-uploaddialog-selector-label": "Целен именски простор"
+}
