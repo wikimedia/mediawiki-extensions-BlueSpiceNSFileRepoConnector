@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Ajeje Brazorf",
-			"Beta16"
+			"Beta16",
+			"GpieroMW"
 		]
 	},
 	"bs-nsfrc-unprefixedfilename-label": "Titolo",
-	"bs-nsfrc-namespacestore-label": "Namespace"
+	"bs-nsfrc-namespacestore-label": "Namespace",
+	"bs-nsfrc-uploaddialog-selector-label": "Namespace di destinazione"
 }
