@@ -1,11 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"YaronSh"
+			"YaronSh",
+			"Amire80"
 		]
 	},
+	"bs-nsfrc-desc": "משלבת את NSFileRepo במגוון של הרחבות BlueSpice (דורשת NSFileRepo)",
 	"bs-nsfrc-namespacestore-label": "מרחב שם",
 	"bs-nsfrc-namespacecombo-emptytext": "נא לבחור מרחב שם",
 	"bs-nsfrc-unprefixedfilename-label": "כותרת",
-	"bs-nsfrc-uploaddialog-selector-label": "מרחב השם של היעד"
+	"bs-nsfrc-uploaddialog-selector-label": "מרחב השם של היעד",
+	"apihelp-bs-nsfrc-tasks-summary": "נקודת קצה API עבור ההרחבה BlueSpiceNSFileRepoConnector",
+	"apihelp-bs-nsfilerepo-connector-summary": "נקודת קצה API עבור ההרחבה BlueSpiceNSFileRepoConnector"
 }
