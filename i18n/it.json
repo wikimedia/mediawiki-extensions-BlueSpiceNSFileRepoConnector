@@ -8,5 +8,6 @@
 	},
 	"bs-nsfrc-unprefixedfilename-label": "Titolo",
 	"bs-nsfrc-namespacestore-label": "Namespace",
-	"bs-nsfrc-uploaddialog-selector-label": "Namespace di destinazione"
+	"bs-nsfrc-uploaddialog-selector-label": "Namespace di destinazione",
+	"bs-nsfrc-namespacecombo-emptytext": "Seleziona il namespace"
 }
