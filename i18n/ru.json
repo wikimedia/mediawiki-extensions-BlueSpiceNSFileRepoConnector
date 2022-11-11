@@ -3,10 +3,12 @@
 		"authors": [
 			"DDPAT",
 			"Ice bulldog",
-			"Kareyac"
+			"Kareyac",
+			"Okras"
 		]
 	},
 	"bs-nsfrc-namespacestore-label": "Пространство имён",
 	"bs-nsfrc-unprefixedfilename-label": "Заголовок",
-	"bs-nsfrc-uploaddialog-selector-label": "Цель пространства имён"
+	"bs-nsfrc-uploaddialog-selector-label": "Цель пространства имён",
+	"bs-nsfrc-namespacecombo-emptytext": "Выберите пространство имён"
 }
