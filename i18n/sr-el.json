@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"bs-nsfrc-namespacestore-label": "Imenski prostor",
+	"bs-nsfrc-namespacecombo-emptytext": "Izaberite imenski prostor",
+	"bs-nsfrc-unprefixedfilename-label": "Naslov",
+	"bs-nsfrc-uploaddialog-selector-label": "Ciljni imenski prostor",
+	"apihelp-bs-nsfrc-tasks-summary": "API krajnja tačka dodatka BlueSpiceNSFileRepoConnector"
+}
