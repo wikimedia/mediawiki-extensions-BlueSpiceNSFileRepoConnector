@@ -4,5 +4,11 @@
 			"Eleassar"
 		]
 	},
-	"bs-nsfrc-namespacestore-label": "Imenski prostor"
+	"bs-nsfrc-desc": "Vključi NSFileRepo v nabor razširitev BlueSpice (zahteva NSFileRepo)",
+	"bs-nsfrc-namespacestore-label": "Imenski prostor",
+	"bs-nsfrc-namespacecombo-emptytext": "Izberite imenski prostor",
+	"bs-nsfrc-unprefixedfilename-label": "Naslov",
+	"bs-nsfrc-uploaddialog-selector-label": "Ciljni imenski prostor",
+	"apihelp-bs-nsfrc-tasks-summary": "Končna točka API-ja za razširitev BlueSpiceNSFileRepoConnector",
+	"apihelp-bs-nsfilerepo-connector-summary": "Končna točka API-ja za razširitev BlueSpiceNSFileRepoConnector"
 }
