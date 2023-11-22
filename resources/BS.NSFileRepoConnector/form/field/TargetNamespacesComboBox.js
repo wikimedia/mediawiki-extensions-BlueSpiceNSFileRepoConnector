@@ -5,7 +5,7 @@ Ext.define( 'BS.NSFileRepoConnector.form.field.TargetNamespacesComboBox', {
 	],
 
 	fieldLabel: mw.message('bs-nsfrc-namespacestore-label').plain(),
-	emptyText: mw.message('bs-nsfrc-namespacecombo-emptytext').plain(),
+	emptyText: mw.message('bs-nsfrc-namespacecombo-emptytext').escaped(),
 
 	queryMode: 'local',
 	displayField: 'nsText',
