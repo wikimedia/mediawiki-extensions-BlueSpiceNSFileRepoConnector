@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"YaronSh",
-			"Amire80"
+			"Amire80",
+			"YaronSh"
 		]
 	},
 	"bs-nsfrc-desc": "משלבת את NSFileRepo במגוון של הרחבות BlueSpice (דורשת NSFileRepo)",
