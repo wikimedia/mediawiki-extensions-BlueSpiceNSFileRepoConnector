@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Chqaz",
 			"Kokage si",
 			"もなー(偽物)"
 		]
 	},
 	"bs-nsfrc-namespacestore-label": "名前空間",
+	"bs-nsfrc-namespacecombo-emptytext": "名前空間を選択",
 	"bs-nsfrc-unprefixedfilename-label": "タイトル",
 	"bs-nsfrc-uploaddialog-selector-label": "対象の名前空間"
 }
