@@ -7,10 +7,10 @@
 	"descriptionmsg": "bs-nsfrc-desc",
 	"type": "bluespice",
 	"requires": {
-		"MediaWiki": ">= 1.36.0",
+		"MediaWiki": ">= 1.39.0",
 		"extensions": {
-			"BlueSpiceFoundation": ">= 4.1",
-			"NSFileRepo": ">= 1.27"
+			"BlueSpiceFoundation": ">= 4.3",
+			"NSFileRepo": ">= 2.0.0"
 		}
 	},
 	"attributes": {
