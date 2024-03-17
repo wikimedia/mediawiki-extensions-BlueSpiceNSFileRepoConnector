@@ -137,7 +137,7 @@ class NSFileRepoConnectorHooks {
 			);
 		}
 
-		$sFilename = implode( '/',  $aFileParts );
+		$sFilename = implode( '/', $aFileParts );
 
 		return true;
 	}
@@ -198,7 +198,7 @@ class NSFileRepoConnectorHooks {
 	 */
 	public static function onBSExportFilesBeforeSave( $oMaintenanceScript, &$oFile,
 		&$sDestPath, &$sSourcePath ) {
-		$sDestPath = str_replace( ':', '/',  $sDestPath );
+		$sDestPath = str_replace( ':', '/', $sDestPath );
 		wfMkdirParents( dirname( $sDestPath ) );
 		return true;
 	}

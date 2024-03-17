@@ -75,7 +75,7 @@ class WebDAVNSFRFilesCollection extends WebDAVFilesCollection {
 		if ( $this->iNSId === NS_MAIN ) {
 			$sPrefix = '';
 		}
-		return str_replace( ' ', '_',  $sPrefix );
+		return str_replace( ' ', '_', $sPrefix );
 	}
 
 }

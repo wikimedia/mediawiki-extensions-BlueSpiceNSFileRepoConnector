@@ -149,7 +149,7 @@ class NSFRCBSExtendedSearchSearchOptionsAssembleSearchOptions {
 
 		$aDecoratedPrefixes = array_map( static function ( $element ) {
 			return "$element\:*";
-		},  $this->aPrefixes );
+		}, $this->aPrefixes );
 
 		$sOrSeparatedList = implode( ' OR ', $aDecoratedPrefixes );
 
