@@ -1,17 +1,15 @@
 <?php
 
-use MediaWiki\MediaWikiServices;
-
 class WebDAVNSFRFilesCollection extends WebDAVFilesCollection {
 	/**
 	 *
 	 * @return array of Nodes
 	 */
 	public function getChildren() {
-		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'webdav' );
+		$config = $this->services->getConfigFactory()->makeConfig( 'webdav' );
 		$sPrefix = $this->getPrefix();
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = $this->services->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$pattern = [
 			$sPrefix, $dbr->anyString()
 		];
@@ -26,7 +24,7 @@ class WebDAVNSFRFilesCollection extends WebDAVFilesCollection {
 			$fileQuery['joins']
 		);
 
-		$localRepo = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo();
+		$localRepo = $this->services->getRepoGroup()->getLocalRepo();
 		$children = [];
 		foreach ( $res as $row ) {
 			$sTrimmedTitle = substr( $row->img_name, strlen( $sPrefix ) );
