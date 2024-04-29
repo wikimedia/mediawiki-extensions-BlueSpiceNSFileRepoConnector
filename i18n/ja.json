@@ -3,11 +3,11 @@
 		"authors": [
 			"Chqaz",
 			"Kokage si",
-			"もなー(偽物)"
+			"\u3082\u306a\u30fc(\u507d\u7269)"
 		]
 	},
-	"bs-nsfrc-namespacestore-label": "名前空間",
-	"bs-nsfrc-unprefixedfilename-label": "タイトル",
-	"bs-nsfrc-uploaddialog-selector-label": "対象の名前空間",
-	"bs-nsfrc-namespacecombo-emptytext": "名前空間を選択"
+	"bs-nsfrc-namespacestore-label": "\u540d\u524d\u7a7a\u9593",
+	"bs-nsfrc-unprefixedfilename-label": "\u30bf\u30a4\u30c8\u30eb",
+	"bs-nsfrc-uploaddialog-selector-label": "\u5bfe\u8c61\u306e\u540d\u524d\u7a7a\u9593",
+	"bs-nsfrc-namespacecombo-emptytext": "\u540d\u524d\u7a7a\u9593\u3092\u9078\u629e"
 }
