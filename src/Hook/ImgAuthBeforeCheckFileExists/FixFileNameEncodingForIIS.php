@@ -15,9 +15,9 @@ class FixFileNameEncodingForIIS extends ImgAuthBeforeCheckFileExists {
 	}
 
 	protected function doProcess() {
-		$this->path = utf8_encode( $this->path );
-		$this->name = utf8_encode( $this->name );
-		$this->filename = utf8_encode( $this->filename );
+		$this->path = mb_convert_encoding( $this->path, 'UTF-8', 'ISO-8859-1' );
+		$this->name = mb_convert_encoding( $this->name, 'UTF-8', 'ISO-8859-1' );
+		$this->filename = mb_convert_encoding( $this->filename, 'UTF-8', 'ISO-8859-1' );
 	}
 
 }
