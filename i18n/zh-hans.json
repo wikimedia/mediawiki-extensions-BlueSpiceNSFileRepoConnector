@@ -3,11 +3,15 @@
 		"authors": [
 			")8",
 			"Lakejason0",
-			"Xiplus"
+			"Xiplus",
+			"沈澄心"
 		]
 	},
+	"bs-nsfrc-desc": "将NSFileRepo整合到一系列BlueSpice扩展中（需要NSFileRepo）",
 	"bs-nsfrc-namespacestore-label": "命名空间",
 	"bs-nsfrc-namespacecombo-emptytext": "选择命名空间",
 	"bs-nsfrc-unprefixedfilename-label": "标题",
-	"bs-nsfrc-uploaddialog-selector-label": "目标命名空间"
+	"bs-nsfrc-uploaddialog-selector-label": "目标命名空间",
+	"apihelp-bs-nsfrc-tasks-summary": "BlueSpiceNSFileRepoConnector扩展的API端点",
+	"apihelp-bs-nsfilerepo-connector-summary": "BlueSpiceNSFileRepoConnector扩展的API端点"
 }
