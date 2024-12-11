@@ -1,5 +1,10 @@
 <?php
 
+namespace BlueSpice\NSFileRepoConnector\WebDAV;
+
+use BlueSpice\NSFileRepoConnector\Util\NSFileRepoConnectorHelper;
+use WebDAVPagesCollection;
+
 class WebDAVNSFRNamespacesCollection extends WebDAVPagesCollection {
 	/**
 	 *
@@ -7,7 +12,7 @@ class WebDAVNSFRNamespacesCollection extends WebDAVPagesCollection {
 	 */
 	public function getChildren() {
 		$children = [];
-		$aNamespaces = NSFileRepoConnectorNamespaceHelper::getPossibleNamespaces();
+		$aNamespaces = NSFileRepoConnectorHelper::getPossibleNamespaces();
 
 		foreach ( $aNamespaces as $iNsId => $sNsName ) {
 			$children[] = new WebDAVNSFRFilesCollection( $this, $sNsName, $iNsId );

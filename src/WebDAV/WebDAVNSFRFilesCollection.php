@@ -1,5 +1,11 @@
 <?php
 
+namespace BlueSpice\NSFileRepoConnector\WebDAV;
+
+use MediaWiki\Extension\NSFileRepo\File\NamespaceLocalFile;
+use Node;
+use WebDAVFilesCollection;
+
 class WebDAVNSFRFilesCollection extends WebDAVFilesCollection {
 	/**
 	 *
@@ -14,7 +20,7 @@ class WebDAVNSFRFilesCollection extends WebDAVFilesCollection {
 			$sPrefix, $dbr->anyString()
 		];
 
-		$fileQuery = NSLocalFile::getQueryInfo();
+		$fileQuery = NamespaceLocalFile::getQueryInfo();
 		$res = $dbr->select(
 			$fileQuery['tables'],
 			$fileQuery['fields'],

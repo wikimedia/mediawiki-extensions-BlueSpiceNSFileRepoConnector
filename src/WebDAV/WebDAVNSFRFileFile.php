@@ -1,4 +1,10 @@
 <?php
+
+namespace BlueSpice\NSFileRepoConnector\WebDAV;
+
+use File;
+use WebDAVFileFile;
+
 class WebDAVNSFRFileFile extends WebDAVFileFile {
 	protected $sName = '';
 	protected $sPrefix = '';
