@@ -1,6 +1,12 @@
 <?php
-class NSFileRepoConnectorNamespaceHelper {
 
+namespace BlueSpice\NSFileRepoConnector\Util;
+
+use MediaWiki\Context\RequestContext;
+use MediaWiki\Extension\NSFileRepo\NamespaceList;
+use User;
+
+class NSFileRepoConnectorHelper {
 	/**
 	 * Returns an Array of Namespaces, that can be used for NSFileRepo
 	 * @param bool $bFilterByPermissions
@@ -8,9 +14,9 @@ class NSFileRepoConnectorNamespaceHelper {
 	 * @return array (NsIdx => NsLocalizedName)
 	 */
 	public static function getPossibleNamespaces( $bFilterByPermissions = true, $oUser = null ) {
-		$oNamespaceList = new NSFileRepo\NamespaceList(
+		$oNamespaceList = new NamespaceList(
 			RequestContext::getMain()->getUser(),
-			new NSFileRepo\Config(),
+			new \MediaWiki\Extension\NSFileRepo\Config(),
 			RequestContext::getMain()->getLanguage()
 		);
 
