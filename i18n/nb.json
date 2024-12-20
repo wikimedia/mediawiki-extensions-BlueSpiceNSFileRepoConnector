@@ -5,10 +5,5 @@
 		]
 	},
 	"bs-nsfrc-desc": "Integrerer NSFileRepo med en rekke BlueSpice-utvidelser (krever NSFileRepo)",
-	"bs-nsfrc-namespacestore-label": "Navnerom",
-	"bs-nsfrc-namespacecombo-emptytext": "Velg navnerom",
-	"bs-nsfrc-unprefixedfilename-label": "Tittel",
-	"bs-nsfrc-uploaddialog-selector-label": "Målnavnerom",
-	"apihelp-bs-nsfrc-tasks-summary": "API-endepunkt for utvidelsen BlueSpiceNSFileRepoConnector",
-	"apihelp-bs-nsfilerepo-connector-summary": "API-endepunkt for utvidelsen BlueSpiceNSFIleRepoConnector"
+	"bs-nsfrc-uploaddialog-selector-label": "Målnavnerom"
 }

@@ -5,10 +5,5 @@
 		]
 	},
 	"bs-nsfrc-desc": "يدمج NSFileRepo في امتدادات BlueSpice (يتطلب NSFileRepo)",
-	"bs-nsfrc-namespacestore-label": "النطاق",
-	"bs-nsfrc-namespacecombo-emptytext": "اختر نطاقا",
-	"bs-nsfrc-unprefixedfilename-label": "العنوان",
-	"bs-nsfrc-uploaddialog-selector-label": "النطاق الهدف",
-	"apihelp-bs-nsfrc-tasks-summary": "نقطة نهاية API لملحق BlueSpiceNSFileRepoConnector",
-	"apihelp-bs-nsfilerepo-connector-summary": "نقطة نهاية API لملحق BlueSpiceNSFileRepoConnector"
+	"bs-nsfrc-uploaddialog-selector-label": "النطاق الهدف"
 }
