@@ -6,8 +6,5 @@
 			"GpieroMW"
 		]
 	},
-	"bs-nsfrc-namespacestore-label": "Namespace",
-	"bs-nsfrc-namespacecombo-emptytext": "Seleziona il namespace",
-	"bs-nsfrc-unprefixedfilename-label": "Titolo",
 	"bs-nsfrc-uploaddialog-selector-label": "Namespace di destinazione"
 }
