@@ -4,7 +4,7 @@ namespace BlueSpice\NSFileRepoConnector\Util;
 
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\NSFileRepo\NamespaceList;
-use User;
+use MediaWiki\User\User;
 
 class NSFileRepoConnectorHelper {
 	/**
