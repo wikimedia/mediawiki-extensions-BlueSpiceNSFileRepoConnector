@@ -28,8 +28,8 @@
 namespace BlueSpice\NSFileRepoConnector\Hook;
 
 use BlueSpice\Hook;
-use IContextSource;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 
 abstract class ImgAuthBeforeCheckFileExists extends Hook {
 
