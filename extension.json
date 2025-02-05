@@ -77,7 +77,6 @@
 		"BeforePageDisplay": "addResources",
 		"WebDAVUrlProviderGetUrl": "handleWebDAV",
 		"MakeGlobalVariablesScript": "makeGlobalVariables",
-		"BSUEModulePDFFindFiles": "BlueSpice\\NSFileRepoConnector\\Hook\\PdfExport::callback",
 		"BSImportFilesMakeTitle": "handleImportExport",
 		"BSExportFilesBeforeSave": "handleImportExport",
 		"WebDAVGetFilenameFromUrl": "handleWebDAV"
