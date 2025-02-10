@@ -2,7 +2,7 @@
 
 namespace BlueSpice\NSFileRepoConnector\Hook;
 
-use MediaWiki\Hook\BeforePageDisplayHook;
+use MediaWiki\Output\Hook\BeforePageDisplayHook;
 
 class AddResources implements BeforePageDisplayHook {
 
