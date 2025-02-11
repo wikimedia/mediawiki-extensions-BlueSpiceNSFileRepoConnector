@@ -4,6 +4,7 @@ require_once dirname( dirname( dirname( __DIR__ ) ) ) . '/maintenance/Maintenanc
 
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use NSFileRepo\NamespaceList;
 
