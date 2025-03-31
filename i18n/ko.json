@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Tensama0415",
 			"Ykhwong"
 		]
 	},
+	"bs-nsfrc-desc": "BlueSpice 확장 기능에 NSFileRepo를 통합합니다 (NSFileRepo 필요).",
 	"bs-nsfrc-uploaddialog-selector-label": "대상 이름공간"
 }
