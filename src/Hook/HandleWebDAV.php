@@ -16,7 +16,8 @@ class HandleWebDAV {
 		$file = array_pop( $urlBits );
 		$namespace = array_pop( $urlBits );
 
-		if ( $namespace === wfMessage( 'nsfilerepo-nsmain' )->plain() ) {
+		$context = RequestContext::getMain();
+		if ( $namespace === $context->msg( 'nsfilerepo-nsmain' )->plain() ) {
 			$filename = $file;
 		} else {
 			$filename = $namespace . ':' . $file;
@@ -35,10 +36,10 @@ class HandleWebDAV {
 	public function onWebDAVUrlProviderGetUrl( &$sPath, &$sFilename, $oTitle ) {
 		$aFileParts = explode( ':', $oTitle->getDBKey(), 2 );
 		if ( count( $aFileParts ) === 1 ) {
-			// NS_MAIN --> prepend '(Pages)'
+			$context = RequestContext::getMain();
 			array_unshift(
 				$aFileParts,
-				wfMessage( 'nsfilerepo-nsmain' )->plain()
+				$context->msg( 'nsfilerepo-nsmain' )->plain()
 			);
 		}
 
