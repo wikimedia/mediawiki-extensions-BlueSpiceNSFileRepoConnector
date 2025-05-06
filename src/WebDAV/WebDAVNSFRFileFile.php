@@ -6,7 +6,10 @@ use File;
 use WebDAVFileFile;
 
 class WebDAVNSFRFileFile extends WebDAVFileFile {
+
+	/** @var string */
 	protected $sName = '';
+	/** @var string */
 	protected $sPrefix = '';
 
 	/**
