@@ -1,7 +1,20 @@
 {
 	"root": true,
 	"extends": [
-		"wikimedia/client-es5",
+		"wikimedia/client",
+		"wikimedia/jquery",
 		"wikimedia/mediawiki"
-	]
+	],
+	"parserOptions": {
+		"sourceType": "commonjs"
+	},
+	"globals": {
+		"blueSpice": "readonly",
+		"bs": "readonly",
+		"jQuery": "readonly",
+		"mediaWiki": "readonly"
+	},
+	"rules": {
+		"max-len": "off"
+	}
 }
