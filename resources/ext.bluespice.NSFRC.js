@@ -1,9 +1,27 @@
-function _getInvalidFileNamespacesForReading() { // eslint-disable-line no-underscore-dangle
+let namespaceList = null;
+
+function _getNamespaceList() { // eslint-disable-line no-underscore-dangle
+	const dfd = $.Deferred();
+	if ( namespaceList ) {
+		return dfd.resolve( namespaceList ).promise();
+	}
+	bs.config.getDeferred( 'NSFRNamespaceList', true ).done( ( value ) => {
+		namespaceList = value;
+		dfd.resolve( namespaceList );
+	} ).fail( () => {
+		namespaceList = { read: [], edit: [] };
+		dfd.resolve( namespaceList );
+	} );
+
+	return dfd.promise();
+}
+
+async function _getInvalidFileNamespacesForReading() { // eslint-disable-line no-underscore-dangle
+	const nsList = await _getNamespaceList();
 	const unreadableNS = [];
 	const allNS = mw.config.get( 'wgFormattedNamespaces' );
-	const bsgNSBasePermissions = mw.config.get( 'bsgNSBasePermissions' );
 	for ( const nsIdx in allNS ) {
-		if ( $.inArray( +nsIdx, bsgNSBasePermissions.read ) === -1 ) { // eslint-disable-line no-jquery/no-in-array
+		if ( !nsList.read.includes( +nsIdx ) ) {
 			unreadableNS.push( parseInt( nsIdx ) );
 		}
 	}
@@ -14,11 +32,10 @@ function _getInvalidFileNamespacesForReading() { // eslint-disable-line no-under
 		.concat( [ bs.ns.NS_FILE ] );
 }
 
-function _getInvalidFileNamespacesForEditing() { // eslint-disable-line no-underscore-dangle
-	const invalidIds = _getInvalidFileNamespacesForReading();
-
-	const bsgNSBasePermissions = mw.config.get( 'bsgNSBasePermissions' );
-	for ( const nsIdx in bsgNSBasePermissions.edit ) {
+async function _getInvalidFileNamespacesForEditing() { // eslint-disable-line no-underscore-dangle
+	const invalidIds = await _getInvalidFileNamespacesForReading();
+	const nsList = await _getNamespaceList();
+	for ( const nsIdx in nsList.edit ) {
 		if ( $.inArray( +nsIdx, invalidIds ) === -1 ) { // eslint-disable-line no-jquery/no-in-array
 			invalidIds.push( nsIdx );
 		}
