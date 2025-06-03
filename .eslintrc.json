@@ -6,7 +6,8 @@
 		"wikimedia/mediawiki"
 	],
 	"parserOptions": {
-		"sourceType": "commonjs"
+		"sourceType": "commonjs",
+		"ecmaVersion": 2017
 	},
 	"globals": {
 		"blueSpice": "readonly",
@@ -15,6 +16,8 @@
 		"mediaWiki": "readonly"
 	},
 	"rules": {
+		"es-x/no-array-prototype-includes": "off",
+		"es-x/no-async-functions": "off",
 		"max-len": "off"
 	}
 }

@@ -3,7 +3,6 @@ bs.vec.registerComponentPlugin(
 	( component ) => {
 		const options = {
 			currentNamespace: mw.config.get( 'wgNamespaceNumber' ),
-			invalidNamespaces: bs.nsfrc.getInvalidFileNamespacesForEditing(),
 			formattedNamespaces: mw.config.get( 'wgFormattedNamespaces' )
 		};
 

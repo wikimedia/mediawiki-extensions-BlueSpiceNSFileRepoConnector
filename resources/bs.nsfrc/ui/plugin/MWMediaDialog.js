@@ -7,24 +7,23 @@
 		options = options || {};
 		options = Object.assign( {
 			currentNamespace: 0,
-			invalidNamespaces: [],
 			formattedNamespaces: []
 		},
 		options
 		);
 
 		this.currentNamespace = options.currentNamespace;
-		this.invalidNamespaces = options.invalidNamespaces;
 		this.formattedNamespaces = options.formattedNamespaces;
 	};
 
 	OO.inheritClass( bs.nsfrc.ui.plugin.MWMediaDialog, bs.vec.ui.plugin.MWMediaDialog );
 
-	bs.nsfrc.ui.plugin.MWMediaDialog.prototype.setNewUploadBooklet = function () {
+	bs.nsfrc.ui.plugin.MWMediaDialog.prototype.setNewUploadBooklet = async function () {
+		const invalidNamespaces = await bs.nsfrc.getInvalidFileNamespacesForEditing();
 
 		this.namespaceSelector = new mw.widgets.NamespaceInputWidget( {
 			value: this.currentNamespace,
-			exclude: this.invalidNamespaces
+			exclude: invalidNamespaces
 		} );
 		this.namespaceSelectorLayout = new OO.ui.FieldLayout( this.namespaceSelector, {
 			label: mw.msg( 'bs-nsfrc-uploaddialog-selector-label' ),
