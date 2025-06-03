@@ -20,6 +20,9 @@
 					"className": "\\BlueSpice\\NSFileRepoConnector\\Extension",
 					"extPath": "/BlueSpiceNSFileRepoConnector"
 				}
+			},
+			"JSConfigVars": {
+				"NSFRNamespaceList": "\\BlueSpice\\NSFileRepoConnector\\JSConfigVariable\\NamespaceList::factory"
 			}
 		},
 		"BlueSpiceVisualEditorConnector": {
@@ -76,7 +79,6 @@
 	"Hooks": {
 		"BeforePageDisplay": "addResources",
 		"WebDAVUrlProviderGetUrl": "handleWebDAV",
-		"MakeGlobalVariablesScript": "makeGlobalVariables",
 		"BSImportFilesMakeTitle": "handleImportExport",
 		"BSExportFilesBeforeSave": "handleImportExport",
 		"WebDAVGetFilenameFromUrl": "handleWebDAV"
