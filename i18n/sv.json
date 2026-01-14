@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Stefan2255",
 			"WikiPhoenix"
 		]
 	},
-	"bs-nsfrc-uploaddialog-selector-label": "Målnamnrymd"
+	"bs-nsfrc-uploaddialog-selector-label": "Målnamnrymd",
+	"bs-nsfrc-desc": "Integrerar NSFileRepo i en rad BlueSpice-tillägg (kräver NSFileRepo)"
 }
