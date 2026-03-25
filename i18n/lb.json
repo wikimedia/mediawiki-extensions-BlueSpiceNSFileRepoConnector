@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Volvox"
 		]
 	},
 	"bs-nsfrc-namespacestore-label": "Nummraum",
-	"bs-nsfrc-unprefixedfilename-label": "Titel"
+	"bs-nsfrc-unprefixedfilename-label": "Titel",
+	"bs-nsfrc-uploaddialog-selector-label": "Zilnummraum"
 }
