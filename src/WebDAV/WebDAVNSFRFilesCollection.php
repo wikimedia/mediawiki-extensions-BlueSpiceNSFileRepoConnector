@@ -8,7 +8,6 @@ use WebDAVFilesCollection;
 
 class WebDAVNSFRFilesCollection extends WebDAVFilesCollection {
 	/**
-	 *
 	 * @return array of Nodes
 	 */
 	public function getChildren() {
@@ -60,7 +59,6 @@ class WebDAVNSFRFilesCollection extends WebDAVFilesCollection {
 	}
 
 	/**
-	 *
 	 * @param string $name
 	 * @param resource|null $data
 	 */
@@ -71,7 +69,6 @@ class WebDAVNSFRFilesCollection extends WebDAVFilesCollection {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getPrefix() {

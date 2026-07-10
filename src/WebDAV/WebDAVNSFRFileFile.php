@@ -13,7 +13,6 @@ class WebDAVNSFRFileFile extends WebDAVFileFile {
 	protected $sPrefix = '';
 
 	/**
-	 *
 	 * @param File $oFile
 	 */
 	public function __construct( $oFile ) {
@@ -30,7 +29,6 @@ class WebDAVNSFRFileFile extends WebDAVFileFile {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getName() {
@@ -38,7 +36,6 @@ class WebDAVNSFRFileFile extends WebDAVFileFile {
 	}
 
 	/**
-	 *
 	 * @param string $name
 	 */
 	public function setName( $name ) {
