@@ -7,7 +7,6 @@ use BlueSpice\NSFileRepoConnector\Hook\ImgAuthBeforeCheckFileExists;
 class FixFileNameEncodingForIIS extends ImgAuthBeforeCheckFileExists {
 
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function skipProcessing() {

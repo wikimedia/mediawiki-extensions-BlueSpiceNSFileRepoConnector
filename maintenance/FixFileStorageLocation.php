@@ -93,7 +93,6 @@ class FixFileStorageLocation extends Maintenance {
 	}
 
 	/**
-	 *
 	 * @return MediaWikiServices
 	 */
 	private function getServices() {
@@ -101,7 +100,6 @@ class FixFileStorageLocation extends Maintenance {
 	}
 
 	/**
-	 *
 	 * @return Language
 	 */
 	public function getLanguage() {
@@ -130,7 +128,6 @@ class FixFileStorageLocation extends Maintenance {
 	}
 
 	/**
-	 *
 	 * @param string $fileName
 	 * @return string
 	 */
@@ -144,7 +141,6 @@ class FixFileStorageLocation extends Maintenance {
 	}
 
 	/**
-	 *
 	 * @param string $fileName
 	 * @param File $file
 	 * @return string

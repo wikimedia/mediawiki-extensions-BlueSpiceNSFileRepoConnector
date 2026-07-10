@@ -34,19 +34,16 @@ use MediaWiki\Context\IContextSource;
 abstract class ImgAuthBeforeCheckFileExists extends Hook {
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $path = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $name = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $filename = null;
@@ -70,7 +67,6 @@ abstract class ImgAuthBeforeCheckFileExists extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param string &$path
