@@ -7,7 +7,6 @@ use WebDAVPagesCollection;
 
 class WebDAVNSFRNamespacesCollection extends WebDAVPagesCollection {
 	/**
-	 *
 	 * @return array
 	 */
 	public function getChildren() {
