@@ -29,6 +29,14 @@
 			"PluginModules": [
 				"ext.bluespice.NSFRC.uploadDialogIntegration"
 			]
+		},
+		"BlueSpiceExtendedSearch": {
+			"PluginRegistry": {
+				"ns-files": {
+					"class": "BlueSpice\\NSFileRepoConnector\\ExtendedSearch\\FileNamespacePlugin",
+					"services": [ "TitleFactory", "MWStakeCommonUtilsFactory" ]
+				}
+			}
 		}
 	},
 	"ExtensionFunctions": [
