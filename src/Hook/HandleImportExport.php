@@ -5,8 +5,8 @@ namespace BlueSpice\NSFileRepoConnector\Hook;
 use BSImportFiles;
 use BSMaintenance;
 use File;
-use FileRepo;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\FileRepo\FileRepo;
 use MediaWiki\Title\Title;
 
 class HandleImportExport {
