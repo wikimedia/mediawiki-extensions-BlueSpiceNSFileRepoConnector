@@ -2,7 +2,7 @@
 
 namespace BlueSpice\NSFileRepoConnector\WebDAV;
 
-use File;
+use MediaWiki\FileRepo\File\File;
 use WebDAVFileFile;
 
 class WebDAVNSFRFileFile extends WebDAVFileFile {

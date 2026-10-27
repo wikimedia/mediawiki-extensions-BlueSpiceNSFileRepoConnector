@@ -4,8 +4,8 @@ namespace BlueSpice\NSFileRepoConnector\Hook;
 
 use BSImportFiles;
 use BSMaintenance;
-use File;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\FileRepo\File\File;
 use MediaWiki\FileRepo\FileRepo;
 use MediaWiki\Title\Title;
 
