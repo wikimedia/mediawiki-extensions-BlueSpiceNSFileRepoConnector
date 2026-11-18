@@ -23,7 +23,7 @@ class FixFileStorageLocation extends Maintenance {
 		$this->output( "Retrive avaiable Namespaces...\n" );
 		$execute = $this->getOption( 'execute', false );
 		$nsList = new NamespaceList(
-			$this->getUser(),
+			User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] ),
 			$this->getConfig(),
 			$this->getLanguage()
 		);
@@ -82,14 +82,6 @@ class FixFileStorageLocation extends Maintenance {
 			$this->output( "Use --execute to really execute the script\n" );
 		}
 		$this->output( "Done, GG\n" );
-	}
-
-	/**
-	 * @return User
-	 */
-	private function getUser() {
-		return $this->getServices()->getService( 'BSUtilityFactory' )
-			->getMaintenanceUser()->getUser();
 	}
 
 	/**
